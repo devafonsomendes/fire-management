@@ -1,0 +1,92 @@
+\doxysection{statistics.\+h File Reference}
+\hypertarget{statistics_8h}{}\label{statistics_8h}\index{statistics.h@{statistics.h}}
+
+
+Contains declarations for Additional Functionality and Strategic Reports.  
+
+
+{\ttfamily \#include "{}data.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{statistics_8h_acae98ee5003b2616d1a515c249acf083}{show\+Operational\+Monitor}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}f\+Head, \mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}e\+Head)
+\begin{DoxyCompactList}\small\item\em ADDITIONAL FUNCTIONALITY\+: Operational Capacity Monitor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{statistics_8h_a7cc3304ff99b7c679f1a20a2b10e76ee}{report\+Operational\+Efficiency}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em COMPLEX REPORT 1\+: Operational Efficiency Analysis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{statistics_8h_a0628d8b76257d5f9a65676ea210dd79e}{report\+Equipment\+Strain}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em COMPLEX REPORT 2\+: \doxylink{struct_equipment}{Equipment} Usage and Strain Analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains declarations for Additional Functionality and Strategic Reports. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+2
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{statistics_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{statistics_8h_a0628d8b76257d5f9a65676ea210dd79e}\index{statistics.h@{statistics.h}!reportEquipmentStrain@{reportEquipmentStrain}}
+\index{reportEquipmentStrain@{reportEquipmentStrain}!statistics.h@{statistics.h}}
+\doxysubsubsection{\texorpdfstring{reportEquipmentStrain()}{reportEquipmentStrain()}}
+{\footnotesize\ttfamily \label{statistics_8h_a0628d8b76257d5f9a65676ea210dd79e} 
+void report\+Equipment\+Strain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+COMPLEX REPORT 2\+: \doxylink{struct_equipment}{Equipment} Usage and Strain Analysis. 
+
+Analyzes the ratio of equipment in maintenance versus operational status to determine if the fleet is overstrained. Provides strategic advice if the maintenance ratio exceeds 30\%.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the equipment linked list.\\
+\hline
+\end{DoxyParams}
+COMPLEX REPORT 2\+: \doxylink{struct_equipment}{Equipment} Usage and Strain Analysis. \Hypertarget{statistics_8h_a7cc3304ff99b7c679f1a20a2b10e76ee}\index{statistics.h@{statistics.h}!reportOperationalEfficiency@{reportOperationalEfficiency}}
+\index{reportOperationalEfficiency@{reportOperationalEfficiency}!statistics.h@{statistics.h}}
+\doxysubsubsection{\texorpdfstring{reportOperationalEfficiency()}{reportOperationalEfficiency()}}
+{\footnotesize\ttfamily \label{statistics_8h_a7cc3304ff99b7c679f1a20a2b10e76ee} 
+void report\+Operational\+Efficiency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+COMPLEX REPORT 1\+: Operational Efficiency Analysis. 
+
+Calculates and displays the average resolution time (in minutes) for each type of incident (Forest, Urban, Industrial), based on resolved occurrences with valid end dates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the occurrence linked list.\\
+\hline
+\end{DoxyParams}
+COMPLEX REPORT 1\+: Operational Efficiency Analysis. \Hypertarget{statistics_8h_acae98ee5003b2616d1a515c249acf083}\index{statistics.h@{statistics.h}!showOperationalMonitor@{showOperationalMonitor}}
+\index{showOperationalMonitor@{showOperationalMonitor}!statistics.h@{statistics.h}}
+\doxysubsubsection{\texorpdfstring{showOperationalMonitor()}{showOperationalMonitor()}}
+{\footnotesize\ttfamily \label{statistics_8h_acae98ee5003b2616d1a515c249acf083} 
+void show\+Operational\+Monitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{f\+Head}{, }\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{e\+Head}{}\end{DoxyParamCaption})}
+
+
+
+ADDITIONAL FUNCTIONALITY\+: Operational Capacity Monitor. 
+
+Displays a real-\/time dashboard showing the percentage of available resources (Human and Material). It calculates the ratio of available vs. total resources and issues a critical alert if the capacity drops below 20\%.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Head} & Pointer to the head of the firefighter linked list. \\
+\hline
+{\em e\+Head} & Pointer to the head of the equipment linked list.\\
+\hline
+\end{DoxyParams}
+Displays a real-\/time dashboard showing the percentage of available resources. It strictly ignores INACTIVE (deleted) resources. 

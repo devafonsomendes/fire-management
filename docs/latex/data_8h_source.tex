@@ -1,0 +1,121 @@
+\doxysection{data.\+h}
+\hypertarget{data_8h_source}{}\label{data_8h_source}\mbox{\hyperlink{data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ DATA\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ DATA\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Constants}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAX\_STRING\ 100}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FILE\_FIREFIGHTERS\ "{}firefighters.bin"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ FILE\_OCCURRENCES\ "{}occurrences.bin"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ FILE\_EQUIPMENTS\ "{}equipments.bin"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ FILE\_INTERVENTIONS\ "{}interventions.bin"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Enumerations}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ FOREST,\ \ \ \ \ \textcolor{comment}{//\ Forest\ fire\ (Incêndio\ Florestal)}}
+\DoxyCodeLine{00030\ \ \ \ \ URBAN,\ \ \ \ \ \ \textcolor{comment}{//\ Urban\ fire\ (Incêndio\ Urbano)}}
+\DoxyCodeLine{00031\ \ \ \ \ INDUSTRIAL\ \ \textcolor{comment}{//\ Industrial\ fire\ (Incêndio\ Industrial)}}
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{data_8h_ac9fa3df3d0f0fd74028792e6e5547e1a}{OccurrenceType}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ LOW,\ \ \ \ \textcolor{comment}{//\ Low\ priority}}
+\DoxyCodeLine{00039\ \ \ \ \ NORMAL,\ \textcolor{comment}{//\ Standard\ priority}}
+\DoxyCodeLine{00040\ \ \ \ \ HIGH\ \ \ \ \textcolor{comment}{//\ Emergency\ priority}}
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{data_8h_a315655b1bb5848c063491adffde62b15}{Priority}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ REPORTED,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incident\ reported\ but\ not\ yet\ acted\ upon}}
+\DoxyCodeLine{00049\ \ \ \ \ IN\_PROGRESS,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Intervention\ is\ ongoing}}
+\DoxyCodeLine{00050\ \ \ \ \ RESOLVED,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incident\ is\ closed/resolved}}
+\DoxyCodeLine{00051\ \ \ \ \ OCCURRENCE\_INACTIVE\ \ \textcolor{comment}{//\ Deleted\ logically\ from\ the\ system}}
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{data_8h_aa4ab6e2ce6ba785143575119c67286bb}{OccurrenceStatus}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ AVAILABLE,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ready\ to\ be\ dispatched}}
+\DoxyCodeLine{00059\ \ \ \ \ BUSY,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Currently\ assigned\ to\ an\ intervention}}
+\DoxyCodeLine{00060\ \ \ \ \ FIREFIGHTER\_INACTIVE\ \ \textcolor{comment}{//\ Removed\ from\ the\ system}}
+\DoxyCodeLine{00061\ \}\ \mbox{\hyperlink{data_8h_a092fece0f028d6d3bb3c0471a14b8ffd}{FirefighterStatus}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ OPERATIONAL,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ready\ for\ use}}
+\DoxyCodeLine{00068\ \ \ \ \ IN\_USE,\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Currently\ deployed}}
+\DoxyCodeLine{00069\ \ \ \ \ MAINTENANCE,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unavailable\ due\ to\ repairs}}
+\DoxyCodeLine{00070\ \ \ \ \ EQUIPMENT\_INACTIVE\ \ \textcolor{comment}{//\ Scrapped/Removed}}
+\DoxyCodeLine{00071\ \}\ \mbox{\hyperlink{data_8h_a18dc643e7983e99c60292cba4633e754}{EquipmentStatus}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ IN\_PLANNING,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Created\ but\ resources\ not\ yet\ deployed}}
+\DoxyCodeLine{00078\ \ \ \ \ RUNNING,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Active\ operation}}
+\DoxyCodeLine{00079\ \ \ \ \ FINISHED,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Operation\ concluded}}
+\DoxyCodeLine{00080\ \ \ \ \ INTERVENTION\_INACTIVE\ \ \textcolor{comment}{//\ Removed}}
+\DoxyCodeLine{00081\ \}\ \mbox{\hyperlink{data_8h_adb0c23c65d99b2cd164fb2da54a7e3f9}{InterventionStatus}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ Structures}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ day,\ month,\ year;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ hour,\ minute;}
+\DoxyCodeLine{00091\ \}\ \mbox{\hyperlink{struct_date_time}{DateTime}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unique\ identifier}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{char}\ name[MAX\_STRING];\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Name\ of\ the\ firefighter}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{char}\ specialty[MAX\_STRING];\ \ \ \ \ \textcolor{comment}{//\ Specialization}}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{data_8h_a092fece0f028d6d3bb3c0471a14b8ffd}{FirefighterStatus}}\ status;\ \ \ \ \ \ \ \textcolor{comment}{//\ Current\ availability}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ totalInterventions;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Statistics:\ Total\ missions\ completed\ (For\ Ranking)}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ totalResponseTime;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Statistics:\ Placeholder\ for\ advanced\ metrics}}
+\DoxyCodeLine{00103\ \}\ \mbox{\hyperlink{struct_firefighter}{Firefighter}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_firefighter_node}{FirefighterNode}}\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{struct_firefighter}{Firefighter}}\ data;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ firefighter\ data\ payload}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_firefighter_node}{FirefighterNode}}*\ next;\ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ next\ node}}
+\DoxyCodeLine{00112\ \}\ \mbox{\hyperlink{struct_firefighter_node}{FirefighterNode}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unique\ identifier}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{char}\ location[MAX\_STRING];\ \ \ \ \ \ \textcolor{comment}{//\ Geographical\ location}}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{struct_date_time}{DateTime}}\ timestamp;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ When\ the\ incident\ started}}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{struct_date_time}{DateTime}}\ endedAt;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ When\ the\ incident\ was\ resolved\ (for\ duration\ calc)}}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{data_8h_ac9fa3df3d0f0fd74028792e6e5547e1a}{OccurrenceType}}\ type;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Type\ of\ fire}}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{data_8h_a315655b1bb5848c063491adffde62b15}{Priority}}\ priority;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Urgency\ level}}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{data_8h_aa4ab6e2ce6ba785143575119c67286bb}{OccurrenceStatus}}\ status;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Current\ state\ of\ the\ incident}}
+\DoxyCodeLine{00125\ \}\ \mbox{\hyperlink{struct_occurrence}{Occurrence}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_occurrence_node}{OccurrenceNode}}\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{struct_occurrence}{Occurrence}}\ data;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_occurrence_node}{OccurrenceNode}}*\ next;}
+\DoxyCodeLine{00133\ \}\ \mbox{\hyperlink{struct_occurrence_node}{OccurrenceNode}};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unique\ identifier}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{char}\ designation[MAX\_STRING];\ \ \ \textcolor{comment}{//\ Name}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{char}\ type[MAX\_STRING];\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Category}}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{data_8h_a18dc643e7983e99c60292cba4633e754}{EquipmentStatus}}\ status;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Operational\ condition}}
+\DoxyCodeLine{00143\ \}\ \mbox{\hyperlink{struct_equipment}{Equipment}};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00148\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_equipment_node}{EquipmentNode}}\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{struct_equipment}{Equipment}}\ data;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_equipment_node}{EquipmentNode}}*\ next;}
+\DoxyCodeLine{00151\ \}\ \mbox{\hyperlink{struct_equipment_node}{EquipmentNode}};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unique\ identifier}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{int}\ idOccurrence;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Foreign\ Key:\ ID\ of\ the\ related\ Occurrence}}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{struct_date_time}{DateTime}}\ start;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Operation\ start\ time}}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{struct_date_time}{DateTime}}\ end;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Operation\ end\ time}}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{data_8h_adb0c23c65d99b2cd164fb2da54a7e3f9}{InterventionStatus}}\ status;\ \ \ \ \ \ \textcolor{comment}{//\ Current\ phase\ of\ the\ operation}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{int}\ assignedFirefighterId;\ \ \ \ \ \ \textcolor{comment}{//\ Foreign\ Key:\ ID\ of\ the\ assigned\ Firefighter}}
+\DoxyCodeLine{00164\ \}\ \mbox{\hyperlink{struct_intervention}{Intervention}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00169\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_intervention_node}{InterventionNode}}\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{struct_intervention}{Intervention}}\ data;}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_intervention_node}{InterventionNode}}*\ next;}
+\DoxyCodeLine{00172\ \}\ \mbox{\hyperlink{struct_intervention_node}{InterventionNode}};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATA\_H}}
+
+\end{DoxyCode}

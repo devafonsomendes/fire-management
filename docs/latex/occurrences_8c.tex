@@ -1,0 +1,185 @@
+\doxysection{occurrences.\+c File Reference}
+\hypertarget{occurrences_8c}{}\label{occurrences_8c}\index{occurrences.c@{occurrences.c}}
+
+
+Implementation of the logic for the \doxylink{struct_occurrence}{Occurrence} management module.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}occurrences.\+h"{}}\newline
+{\ttfamily \#include "{}input.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_date_time}{Date\+Time}} \mbox{\hyperlink{occurrences_8c_a8212275f98ba8fab10eeef8e707f858f}{read\+Date\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Helper function to read date and time from user input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{occurrences_8c_afde0c4cdb4d042c70a4708fb6cb7458d}{menu\+Occurrences}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Displays the \doxylink{struct_occurrence}{Occurrence} management menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{occurrences_8c_ad72870057ba001b87496a15a819abff9}{create\+Occurrence}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Creates a new occurrence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{occurrences_8c_ab1ea1fa2806fc2af2215ab3581f7c33e}{list\+Occurrences}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Lists all occurrences. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{occurrences_8c_a21ad378e44ed5cfb4cc874034b66857e}{update\+Occurrence}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Updates the status of an occurrence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{occurrences_8c_ae2bf283c638e7ced3cb34d5ad5314671}{delete\+Occurrence}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Cancels an occurrence (Soft Delete). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{occurrences_8c_a50c54a18dfeb6f2801c740fb0b16e7cf}{list\+Occurrence\+Stats}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em REPORT\+: Stats by location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{occurrences_8c_aa87662904f8e1ff90b4308707b63e7ff}{save\+Occurrences}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Saves occurrences to a binary file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{occurrences_8c_a1a3ccc08f1ffa029431981fc1e907de3}{load\+Occurrences}} (int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Loads occurrences from a binary file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{occurrences_8c_a0ad224eaeb97a639364cede7414db7d2}{free\+Occurrences}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Frees memory allocated for occurrences. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the logic for the \doxylink{struct_occurrence}{Occurrence} management module. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{occurrences_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{occurrences_8c_ad72870057ba001b87496a15a819abff9}\index{occurrences.c@{occurrences.c}!createOccurrence@{createOccurrence}}
+\index{createOccurrence@{createOccurrence}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{createOccurrence()}{createOccurrence()}}
+{\footnotesize\ttfamily \label{occurrences_8c_ad72870057ba001b87496a15a819abff9} 
+\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*} create\+Occurrence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new occurrence. 
+
+Creates a new occurrence and adds it to the list. \Hypertarget{occurrences_8c_ae2bf283c638e7ced3cb34d5ad5314671}\index{occurrences.c@{occurrences.c}!deleteOccurrence@{deleteOccurrence}}
+\index{deleteOccurrence@{deleteOccurrence}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{deleteOccurrence()}{deleteOccurrence()}}
+{\footnotesize\ttfamily \label{occurrences_8c_ae2bf283c638e7ced3cb34d5ad5314671} 
+\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*} delete\+Occurrence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Cancels an occurrence (Soft Delete). 
+
+Cancels an occurrence (Soft delete). \Hypertarget{occurrences_8c_a0ad224eaeb97a639364cede7414db7d2}\index{occurrences.c@{occurrences.c}!freeOccurrences@{freeOccurrences}}
+\index{freeOccurrences@{freeOccurrences}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{freeOccurrences()}{freeOccurrences()}}
+{\footnotesize\ttfamily \label{occurrences_8c_a0ad224eaeb97a639364cede7414db7d2} 
+void free\+Occurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Frees memory allocated for occurrences. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{occurrences_8c_ab1ea1fa2806fc2af2215ab3581f7c33e}\index{occurrences.c@{occurrences.c}!listOccurrences@{listOccurrences}}
+\index{listOccurrences@{listOccurrences}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{listOccurrences()}{listOccurrences()}}
+{\footnotesize\ttfamily \label{occurrences_8c_ab1ea1fa2806fc2af2215ab3581f7c33e} 
+void list\+Occurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Lists all occurrences. 
+
+Lists all registered occurrences. \Hypertarget{occurrences_8c_a50c54a18dfeb6f2801c740fb0b16e7cf}\index{occurrences.c@{occurrences.c}!listOccurrenceStats@{listOccurrenceStats}}
+\index{listOccurrenceStats@{listOccurrenceStats}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{listOccurrenceStats()}{listOccurrenceStats()}}
+{\footnotesize\ttfamily \label{occurrences_8c_a50c54a18dfeb6f2801c740fb0b16e7cf} 
+void list\+Occurrence\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+REPORT\+: Stats by location. 
+
+Reports analysis by location and frequency. \Hypertarget{occurrences_8c_a1a3ccc08f1ffa029431981fc1e907de3}\index{occurrences.c@{occurrences.c}!loadOccurrences@{loadOccurrences}}
+\index{loadOccurrences@{loadOccurrences}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{loadOccurrences()}{loadOccurrences()}}
+{\footnotesize\ttfamily \label{occurrences_8c_a1a3ccc08f1ffa029431981fc1e907de3} 
+\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*} load\+Occurrences (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Loads occurrences from a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Seq} & Pointer to store the highest ID found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the pointer to the head of the loaded linked list. 
+\end{DoxyReturn}
+\Hypertarget{occurrences_8c_afde0c4cdb4d042c70a4708fb6cb7458d}\index{occurrences.c@{occurrences.c}!menuOccurrences@{menuOccurrences}}
+\index{menuOccurrences@{menuOccurrences}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{menuOccurrences()}{menuOccurrences()}}
+{\footnotesize\ttfamily \label{occurrences_8c_afde0c4cdb4d042c70a4708fb6cb7458d} 
+void menu\+Occurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Displays the \doxylink{struct_occurrence}{Occurrence} management menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Double pointer to the head of the linked list. \\
+\hline
+{\em id\+Seq} & Pointer to the ID sequence counter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{occurrences_8c_a8212275f98ba8fab10eeef8e707f858f}\index{occurrences.c@{occurrences.c}!readDateTime@{readDateTime}}
+\index{readDateTime@{readDateTime}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{readDateTime()}{readDateTime()}}
+{\footnotesize\ttfamily \label{occurrences_8c_a8212275f98ba8fab10eeef8e707f858f} 
+\mbox{\hyperlink{struct_date_time}{Date\+Time}} read\+Date\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Helper function to read date and time from user input. 
+
+\begin{DoxyReturn}{Returns}
+Returns the populated \doxylink{struct_date_time}{Date\+Time} structure. 
+\end{DoxyReturn}
+\Hypertarget{occurrences_8c_aa87662904f8e1ff90b4308707b63e7ff}\index{occurrences.c@{occurrences.c}!saveOccurrences@{saveOccurrences}}
+\index{saveOccurrences@{saveOccurrences}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{saveOccurrences()}{saveOccurrences()}}
+{\footnotesize\ttfamily \label{occurrences_8c_aa87662904f8e1ff90b4308707b63e7ff} 
+void save\+Occurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Saves occurrences to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{occurrences_8c_a21ad378e44ed5cfb4cc874034b66857e}\index{occurrences.c@{occurrences.c}!updateOccurrence@{updateOccurrence}}
+\index{updateOccurrence@{updateOccurrence}!occurrences.c@{occurrences.c}}
+\doxysubsubsection{\texorpdfstring{updateOccurrence()}{updateOccurrence()}}
+{\footnotesize\ttfamily \label{occurrences_8c_a21ad378e44ed5cfb4cc874034b66857e} 
+void update\+Occurrence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Updates the status of an occurrence. 
+
+Updates the state or details of an occurrence. 

@@ -1,0 +1,198 @@
+\doxysection{firefighters.\+h File Reference}
+\hypertarget{firefighters_8h}{}\label{firefighters_8h}\index{firefighters.h@{firefighters.h}}
+
+
+Defines functions for managing Firefighters (Create, Read, Update, Delete) and data persistence.  
+
+
+{\ttfamily \#include "{}data.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{firefighters_8h_a3d5cc2ddbc379881b7d782a1a4d6c84d}{menu\+Firefighters}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Displays the \doxylink{struct_firefighter}{Firefighter} management menu and handles user selection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{firefighters_8h_a00fc06cde11eec26533f92a14481c960}{create\+Firefighter}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Creates a new firefighter and adds it to the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{firefighters_8h_adff4712e080f46555be9e11e6f98c79d}{list\+Firefighters}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Lists all active firefighters in the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{firefighters_8h_a5628ee70ab8e8f10870a89d182492b25}{update\+Firefighter}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Updates the status of an existing firefighter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{firefighters_8h_a9f302bbe3233b27a488679ad4a1f387b}{delete\+Firefighter}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Performs a soft delete on a firefighter (sets state to INACTIVE). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{firefighters_8h_ac5f41de16dc24268933af46a10144068}{save\+Firefighters}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Saves the firefighter list to a binary file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{firefighters_8h_af5e5b6f7b9f2c6368737040fceef109a}{load\+Firefighters}} (int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Loads the firefighter list from a binary file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{firefighters_8h_aa91132adf06528cfff186f085e309078}{free\+Firefighters}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Frees all memory allocated for the firefighter list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{firefighters_8h_a353d2d3cf76cb0dd645df8eda0843374}{list\+Firefighter\+Ranking}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Lists firefighters ranked by the number of interventions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines functions for managing Firefighters (Create, Read, Update, Delete) and data persistence. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{firefighters_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{firefighters_8h_a00fc06cde11eec26533f92a14481c960}\index{firefighters.h@{firefighters.h}!createFirefighter@{createFirefighter}}
+\index{createFirefighter@{createFirefighter}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{createFirefighter()}{createFirefighter()}}
+{\footnotesize\ttfamily \label{firefighters_8h_a00fc06cde11eec26533f92a14481c960} 
+\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*} create\+Firefighter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new firefighter and adds it to the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the current head of the linked list. \\
+\hline
+{\em id\+Seq} & Pointer to the ID sequence counter to generate a new unique ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the new head of the linked list.
+\end{DoxyReturn}
+Creates a new firefighter and adds it to the list. \Hypertarget{firefighters_8h_a9f302bbe3233b27a488679ad4a1f387b}\index{firefighters.h@{firefighters.h}!deleteFirefighter@{deleteFirefighter}}
+\index{deleteFirefighter@{deleteFirefighter}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{deleteFirefighter()}{deleteFirefighter()}}
+{\footnotesize\ttfamily \label{firefighters_8h_a9f302bbe3233b27a488679ad4a1f387b} 
+\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*} delete\+Firefighter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Performs a soft delete on a firefighter (sets state to INACTIVE). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the head of the linked list. 
+\end{DoxyReturn}
+\Hypertarget{firefighters_8h_aa91132adf06528cfff186f085e309078}\index{firefighters.h@{firefighters.h}!freeFirefighters@{freeFirefighters}}
+\index{freeFirefighters@{freeFirefighters}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{freeFirefighters()}{freeFirefighters()}}
+{\footnotesize\ttfamily \label{firefighters_8h_aa91132adf06528cfff186f085e309078} 
+void free\+Firefighters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Frees all memory allocated for the firefighter list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{firefighters_8h_a353d2d3cf76cb0dd645df8eda0843374}\index{firefighters.h@{firefighters.h}!listFirefighterRanking@{listFirefighterRanking}}
+\index{listFirefighterRanking@{listFirefighterRanking}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{listFirefighterRanking()}{listFirefighterRanking()}}
+{\footnotesize\ttfamily \label{firefighters_8h_a353d2d3cf76cb0dd645df8eda0843374} 
+void list\+Firefighter\+Ranking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Lists firefighters ranked by the number of interventions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list.\\
+\hline
+\end{DoxyParams}
+Lists firefighters ranked by the number of interventions. \Hypertarget{firefighters_8h_adff4712e080f46555be9e11e6f98c79d}\index{firefighters.h@{firefighters.h}!listFirefighters@{listFirefighters}}
+\index{listFirefighters@{listFirefighters}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{listFirefighters()}{listFirefighters()}}
+{\footnotesize\ttfamily \label{firefighters_8h_adff4712e080f46555be9e11e6f98c79d} 
+void list\+Firefighters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Lists all active firefighters in the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list.\\
+\hline
+\end{DoxyParams}
+Lists all active firefighters in the console. \Hypertarget{firefighters_8h_af5e5b6f7b9f2c6368737040fceef109a}\index{firefighters.h@{firefighters.h}!loadFirefighters@{loadFirefighters}}
+\index{loadFirefighters@{loadFirefighters}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{loadFirefighters()}{loadFirefighters()}}
+{\footnotesize\ttfamily \label{firefighters_8h_af5e5b6f7b9f2c6368737040fceef109a} 
+\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*} load\+Firefighters (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Loads the firefighter list from a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Seq} & Pointer to store the highest ID found (to resume sequencing). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the pointer to the head of the loaded linked list. 
+\end{DoxyReturn}
+\Hypertarget{firefighters_8h_a3d5cc2ddbc379881b7d782a1a4d6c84d}\index{firefighters.h@{firefighters.h}!menuFirefighters@{menuFirefighters}}
+\index{menuFirefighters@{menuFirefighters}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{menuFirefighters()}{menuFirefighters()}}
+{\footnotesize\ttfamily \label{firefighters_8h_a3d5cc2ddbc379881b7d782a1a4d6c84d} 
+void menu\+Firefighters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Displays the \doxylink{struct_firefighter}{Firefighter} management menu and handles user selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Double pointer to the head of the linked list (to allow modification). \\
+\hline
+{\em id\+Seq} & Pointer to the ID sequence counter.\\
+\hline
+\end{DoxyParams}
+Displays the \doxylink{struct_firefighter}{Firefighter} management menu and handles user selection. \Hypertarget{firefighters_8h_ac5f41de16dc24268933af46a10144068}\index{firefighters.h@{firefighters.h}!saveFirefighters@{saveFirefighters}}
+\index{saveFirefighters@{saveFirefighters}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{saveFirefighters()}{saveFirefighters()}}
+{\footnotesize\ttfamily \label{firefighters_8h_ac5f41de16dc24268933af46a10144068} 
+void save\+Firefighters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Saves the firefighter list to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{firefighters_8h_a5628ee70ab8e8f10870a89d182492b25}\index{firefighters.h@{firefighters.h}!updateFirefighter@{updateFirefighter}}
+\index{updateFirefighter@{updateFirefighter}!firefighters.h@{firefighters.h}}
+\doxysubsubsection{\texorpdfstring{updateFirefighter()}{updateFirefighter()}}
+{\footnotesize\ttfamily \label{firefighters_8h_a5628ee70ab8e8f10870a89d182492b25} 
+void update\+Firefighter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Updates the status of an existing firefighter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}

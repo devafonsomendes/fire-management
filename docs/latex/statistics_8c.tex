@@ -1,0 +1,76 @@
+\doxysection{statistics.\+c File Reference}
+\hypertarget{statistics_8c}{}\label{statistics_8c}\index{statistics.c@{statistics.c}}
+
+
+Implementation of strategic reports and additional decision-\/support tools.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}statistics.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{statistics_8c_a5f53f3f9420a92ab97840fe1f89c14e1}\label{statistics_8c_a5f53f3f9420a92ab97840fe1f89c14e1} 
+int {\bfseries calc\+Minutes} (\mbox{\hyperlink{struct_date_time}{Date\+Time}} start, \mbox{\hyperlink{struct_date_time}{Date\+Time}} end)
+\begin{DoxyCompactList}\small\item\em Helper function to calculate the difference in minutes between two dates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{statistics_8c_acae98ee5003b2616d1a515c249acf083}{show\+Operational\+Monitor}} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}f\+Head, \mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}e\+Head)
+\begin{DoxyCompactList}\small\item\em ADDITIONAL FUNCTIONALITY\+: Operational Capacity Monitor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{statistics_8c_a7cc3304ff99b7c679f1a20a2b10e76ee}{report\+Operational\+Efficiency}} (\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em REPORT 1\+: Operational Efficiency Analysis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{statistics_8c_a0628d8b76257d5f9a65676ea210dd79e}{report\+Equipment\+Strain}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em REPORT 2\+: \doxylink{struct_equipment}{Equipment} Usage and Strain Analysis. \end{DoxyCompactList}\item 
+\Hypertarget{statistics_8c_af9005e210dd403be748d2d0a7f1648a2}\label{statistics_8c_af9005e210dd403be748d2d0a7f1648a2} 
+void {\bfseries recommend\+Resources} (\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}f\+Head, \mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}e\+Head)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of strategic reports and additional decision-\/support tools. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+3
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{statistics_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{statistics_8c_a0628d8b76257d5f9a65676ea210dd79e}\index{statistics.c@{statistics.c}!reportEquipmentStrain@{reportEquipmentStrain}}
+\index{reportEquipmentStrain@{reportEquipmentStrain}!statistics.c@{statistics.c}}
+\doxysubsubsection{\texorpdfstring{reportEquipmentStrain()}{reportEquipmentStrain()}}
+{\footnotesize\ttfamily \label{statistics_8c_a0628d8b76257d5f9a65676ea210dd79e} 
+void report\+Equipment\+Strain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+REPORT 2\+: \doxylink{struct_equipment}{Equipment} Usage and Strain Analysis. 
+
+COMPLEX REPORT 2\+: \doxylink{struct_equipment}{Equipment} Usage and Strain Analysis. \Hypertarget{statistics_8c_a7cc3304ff99b7c679f1a20a2b10e76ee}\index{statistics.c@{statistics.c}!reportOperationalEfficiency@{reportOperationalEfficiency}}
+\index{reportOperationalEfficiency@{reportOperationalEfficiency}!statistics.c@{statistics.c}}
+\doxysubsubsection{\texorpdfstring{reportOperationalEfficiency()}{reportOperationalEfficiency()}}
+{\footnotesize\ttfamily \label{statistics_8c_a7cc3304ff99b7c679f1a20a2b10e76ee} 
+void report\+Operational\+Efficiency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+REPORT 1\+: Operational Efficiency Analysis. 
+
+COMPLEX REPORT 1\+: Operational Efficiency Analysis. \Hypertarget{statistics_8c_acae98ee5003b2616d1a515c249acf083}\index{statistics.c@{statistics.c}!showOperationalMonitor@{showOperationalMonitor}}
+\index{showOperationalMonitor@{showOperationalMonitor}!statistics.c@{statistics.c}}
+\doxysubsubsection{\texorpdfstring{showOperationalMonitor()}{showOperationalMonitor()}}
+{\footnotesize\ttfamily \label{statistics_8c_acae98ee5003b2616d1a515c249acf083} 
+void show\+Operational\+Monitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{f\+Head}{, }\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{e\+Head}{}\end{DoxyParamCaption})}
+
+
+
+ADDITIONAL FUNCTIONALITY\+: Operational Capacity Monitor. 
+
+Displays a real-\/time dashboard showing the percentage of available resources. It strictly ignores INACTIVE (deleted) resources. 

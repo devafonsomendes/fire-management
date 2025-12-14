@@ -1,0 +1,165 @@
+\doxysection{interventions.\+c File Reference}
+\hypertarget{interventions_8c}{}\label{interventions_8c}\index{interventions.c@{interventions.c}}
+
+
+Implementation of \doxylink{struct_intervention}{Intervention} logic and specific reports.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}interventions.\+h"{}}\newline
+{\ttfamily \#include "{}input.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interventions_8c_a07067adbc6ba934f02a9ac12a1211a40}\label{interventions_8c_a07067adbc6ba934f02a9ac12a1211a40} 
+int {\bfseries diff\+Minutes} (\mbox{\hyperlink{struct_date_time}{Date\+Time}} start, \mbox{\hyperlink{struct_date_time}{Date\+Time}} end)
+\begin{DoxyCompactList}\small\item\em Helper function to calculate the difference in minutes between two dates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interventions_8c_abdf0c302215e47f3562504b4f95ec6e7}{menu\+Interventions}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head, \mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}occ\+Head, \mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}fire\+Head, \mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}equip\+Head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Displays the \doxylink{struct_intervention}{Intervention} management menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{interventions_8c_a537223c7ead446a5a0ab731ebddec256}{create\+Intervention}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}head, \mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}occ\+Head, \mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}fire\+Head, \mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}equip\+Head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Creates a new intervention linked to resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interventions_8c_a9f4a89e0f31e994cca47ca7598daf518}{list\+Interventions}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Lists all interventions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interventions_8c_ae0d232c75d0d3147e2a632993f2fbac4}{update\+Intervention}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Updates the status of an intervention. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{interventions_8c_ae92006d4d1c5522164389c8bc3e0f7cf}{delete\+Intervention}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Cancels an intervention. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interventions_8c_a25c097d7dec44b06f65157797454b74f}{report\+Intervention\+Stats}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em REPORT\+: Efficiency Stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interventions_8c_aef225dbe5f5c74fab3c0510a8ffd8ff1}{save\+Interventions}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Saves the intervention list to a binary file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{interventions_8c_a46f7819bcae390833925273c5078ea0f}{load\+Interventions}} (int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Loads the intervention list from a binary file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interventions_8c_a5eb09e5c05b29b4a47ad9afa0c8e7236}{free\+Interventions}} (\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Frees all memory allocated for the intervention list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of \doxylink{struct_intervention}{Intervention} logic and specific reports. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{interventions_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{interventions_8c_a537223c7ead446a5a0ab731ebddec256}\index{interventions.c@{interventions.c}!createIntervention@{createIntervention}}
+\index{createIntervention@{createIntervention}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{createIntervention()}{createIntervention()}}
+{\footnotesize\ttfamily \label{interventions_8c_a537223c7ead446a5a0ab731ebddec256} 
+\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*} create\+Intervention (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{, }\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{occ\+Head}{, }\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{fire\+Head}{, }\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{equip\+Head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new intervention linked to resources. 
+
+Creates a new intervention linked to an occurrence and resources. \Hypertarget{interventions_8c_ae92006d4d1c5522164389c8bc3e0f7cf}\index{interventions.c@{interventions.c}!deleteIntervention@{deleteIntervention}}
+\index{deleteIntervention@{deleteIntervention}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{deleteIntervention()}{deleteIntervention()}}
+{\footnotesize\ttfamily \label{interventions_8c_ae92006d4d1c5522164389c8bc3e0f7cf} 
+\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*} delete\+Intervention (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Cancels an intervention. 
+
+Cancels an intervention (Soft Delete / Inactive status). \Hypertarget{interventions_8c_a5eb09e5c05b29b4a47ad9afa0c8e7236}\index{interventions.c@{interventions.c}!freeInterventions@{freeInterventions}}
+\index{freeInterventions@{freeInterventions}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{freeInterventions()}{freeInterventions()}}
+{\footnotesize\ttfamily \label{interventions_8c_a5eb09e5c05b29b4a47ad9afa0c8e7236} 
+void free\+Interventions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Frees all memory allocated for the intervention list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the intervention linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interventions_8c_a9f4a89e0f31e994cca47ca7598daf518}\index{interventions.c@{interventions.c}!listInterventions@{listInterventions}}
+\index{listInterventions@{listInterventions}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{listInterventions()}{listInterventions()}}
+{\footnotesize\ttfamily \label{interventions_8c_a9f4a89e0f31e994cca47ca7598daf518} 
+void list\+Interventions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Lists all interventions. 
+
+Lists all registered interventions in the console. \Hypertarget{interventions_8c_a46f7819bcae390833925273c5078ea0f}\index{interventions.c@{interventions.c}!loadInterventions@{loadInterventions}}
+\index{loadInterventions@{loadInterventions}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{loadInterventions()}{loadInterventions()}}
+{\footnotesize\ttfamily \label{interventions_8c_a46f7819bcae390833925273c5078ea0f} 
+\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*} load\+Interventions (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Loads the intervention list from a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Seq} & Pointer to store the highest ID found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the pointer to the head of the loaded linked list. 
+\end{DoxyReturn}
+\Hypertarget{interventions_8c_abdf0c302215e47f3562504b4f95ec6e7}\index{interventions.c@{interventions.c}!menuInterventions@{menuInterventions}}
+\index{menuInterventions@{menuInterventions}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{menuInterventions()}{menuInterventions()}}
+{\footnotesize\ttfamily \label{interventions_8c_abdf0c302215e47f3562504b4f95ec6e7} 
+void menu\+Interventions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head}{, }\item[{\mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}} \texorpdfstring{$\ast$}{*}}]{occ\+Head}{, }\item[{\mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}} \texorpdfstring{$\ast$}{*}}]{fire\+Head}{, }\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{equip\+Head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Displays the \doxylink{struct_intervention}{Intervention} management menu. 
+
+Displays the \doxylink{struct_intervention}{Intervention} management menu and handles user selection. \Hypertarget{interventions_8c_a25c097d7dec44b06f65157797454b74f}\index{interventions.c@{interventions.c}!reportInterventionStats@{reportInterventionStats}}
+\index{reportInterventionStats@{reportInterventionStats}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{reportInterventionStats()}{reportInterventionStats()}}
+{\footnotesize\ttfamily \label{interventions_8c_a25c097d7dec44b06f65157797454b74f} 
+void report\+Intervention\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+REPORT\+: Efficiency Stats. 
+
+REPORT\+: Generates statistics on efficiency, duration, and resource usage. \Hypertarget{interventions_8c_aef225dbe5f5c74fab3c0510a8ffd8ff1}\index{interventions.c@{interventions.c}!saveInterventions@{saveInterventions}}
+\index{saveInterventions@{saveInterventions}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{saveInterventions()}{saveInterventions()}}
+{\footnotesize\ttfamily \label{interventions_8c_aef225dbe5f5c74fab3c0510a8ffd8ff1} 
+void save\+Interventions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Saves the intervention list to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the intervention linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interventions_8c_ae0d232c75d0d3147e2a632993f2fbac4}\index{interventions.c@{interventions.c}!updateIntervention@{updateIntervention}}
+\index{updateIntervention@{updateIntervention}!interventions.c@{interventions.c}}
+\doxysubsubsection{\texorpdfstring{updateIntervention()}{updateIntervention()}}
+{\footnotesize\ttfamily \label{interventions_8c_ae0d232c75d0d3147e2a632993f2fbac4} 
+void update\+Intervention (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Updates the status of an intervention. 
+
+Updates the status or details (e.\+g., end date) of an intervention. 

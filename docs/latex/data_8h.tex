@@ -1,0 +1,136 @@
+\doxysection{data.\+h File Reference}
+\hypertarget{data_8h}{}\label{data_8h}\index{data.h@{data.h}}
+
+
+Defines the core data structures (structs) and enumerations used across the entire system. This file serves as the central data model for Firefighters, Occurrences, \doxylink{struct_equipment}{Equipment}, and Interventions.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_date_time}{Date\+Time}}
+\begin{DoxyCompactList}\small\item\em Structure to represent Date and Time. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_firefighter}{Firefighter}}
+\begin{DoxyCompactList}\small\item\em Structure representing a \doxylink{struct_firefighter}{Firefighter} entity. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_firefighter_node}{Firefighter\+Node}}
+\begin{DoxyCompactList}\small\item\em Linked List Node for Firefighters. Implements a dynamic list to store firefighter data. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_occurrence}{Occurrence}}
+\begin{DoxyCompactList}\small\item\em Structure representing an \doxylink{struct_occurrence}{Occurrence} (Incident). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_occurrence_node}{Occurrence\+Node}}
+\begin{DoxyCompactList}\small\item\em Linked List Node for Occurrences. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_equipment}{Equipment}}
+\begin{DoxyCompactList}\small\item\em Structure representing \doxylink{struct_equipment}{Equipment}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}}
+\begin{DoxyCompactList}\small\item\em Linked List Node for \doxylink{struct_equipment}{Equipment}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_intervention}{Intervention}}
+\begin{DoxyCompactList}\small\item\em Structure representing an \doxylink{struct_intervention}{Intervention}. Links an \doxylink{struct_occurrence}{Occurrence} to the resources (Firefighter/\+Equipment) assigned to it. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_intervention_node}{Intervention\+Node}}
+\begin{DoxyCompactList}\small\item\em Linked List Node for Interventions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{data_8h_ab5187269936538ffb8ccbbe7115ffdbc}\label{data_8h_ab5187269936538ffb8ccbbe7115ffdbc} 
+\#define {\bfseries MAX\+\_\+\+STRING}~100
+\item 
+\Hypertarget{data_8h_aa7095a9cd9a0481ab74acf6e23bbea91}\label{data_8h_aa7095a9cd9a0481ab74acf6e23bbea91} 
+\#define {\bfseries FILE\+\_\+\+FIREFIGHTERS}~"{}firefighters.\+bin"{}
+\item 
+\Hypertarget{data_8h_af0c774c7772425c2ec65f692ca80c199}\label{data_8h_af0c774c7772425c2ec65f692ca80c199} 
+\#define {\bfseries FILE\+\_\+\+OCCURRENCES}~"{}occurrences.\+bin"{}
+\item 
+\Hypertarget{data_8h_a061b88350908c48131c899da474eb885}\label{data_8h_a061b88350908c48131c899da474eb885} 
+\#define {\bfseries FILE\+\_\+\+EQUIPMENTS}~"{}equipments.\+bin"{}
+\item 
+\Hypertarget{data_8h_aed1da717944cf281fb98e5738804a8ec}\label{data_8h_aed1da717944cf281fb98e5738804a8ec} 
+\#define {\bfseries FILE\+\_\+\+INTERVENTIONS}~"{}interventions.\+bin"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{data_8h_a59ee38ec545c4fc5b0ae3c48d2cff84a}\label{data_8h_a59ee38ec545c4fc5b0ae3c48d2cff84a} 
+typedef struct Firefighter\+Node {\bfseries Firefighter\+Node}
+\begin{DoxyCompactList}\small\item\em Linked List Node for Firefighters. Implements a dynamic list to store firefighter data. \end{DoxyCompactList}\item 
+\Hypertarget{data_8h_a938bec557b45fd0d8f71cdc287b64b8d}\label{data_8h_a938bec557b45fd0d8f71cdc287b64b8d} 
+typedef struct Occurrence\+Node {\bfseries Occurrence\+Node}
+\begin{DoxyCompactList}\small\item\em Linked List Node for Occurrences. \end{DoxyCompactList}\item 
+\Hypertarget{data_8h_ab7c7c338a89abd14f7b572cf64a25f17}\label{data_8h_ab7c7c338a89abd14f7b572cf64a25f17} 
+typedef struct Equipment\+Node {\bfseries Equipment\+Node}
+\begin{DoxyCompactList}\small\item\em Linked List Node for \doxylink{struct_equipment}{Equipment}. \end{DoxyCompactList}\item 
+\Hypertarget{data_8h_a8d1781b4c1006660cac55203d9b213e2}\label{data_8h_a8d1781b4c1006660cac55203d9b213e2} 
+typedef struct Intervention\+Node {\bfseries Intervention\+Node}
+\begin{DoxyCompactList}\small\item\em Linked List Node for Interventions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{data_8h_ac9fa3df3d0f0fd74028792e6e5547e1a}\label{data_8h_ac9fa3df3d0f0fd74028792e6e5547e1a} 
+enum \mbox{\hyperlink{data_8h_ac9fa3df3d0f0fd74028792e6e5547e1a}{Occurrence\+Type}} \{ {\bfseries FOREST}
+, {\bfseries URBAN}
+, {\bfseries INDUSTRIAL}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the type of an occurrence environment. \end{DoxyCompactList}\item 
+\Hypertarget{data_8h_a315655b1bb5848c063491adffde62b15}\label{data_8h_a315655b1bb5848c063491adffde62b15} 
+enum \mbox{\hyperlink{data_8h_a315655b1bb5848c063491adffde62b15}{Priority}} \{ {\bfseries LOW}
+, {\bfseries NORMAL}
+, {\bfseries HIGH}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the priority level of an occurrence. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{data_8h_aa4ab6e2ce6ba785143575119c67286bb}{Occurrence\+Status}} \{ {\bfseries REPORTED}
+, {\bfseries IN\+\_\+\+PROGRESS}
+, {\bfseries RESOLVED}
+, {\bfseries OCCURRENCE\+\_\+\+INACTIVE}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the lifecycle status of an occurrence. \end{DoxyCompactList}\item 
+\Hypertarget{data_8h_a092fece0f028d6d3bb3c0471a14b8ffd}\label{data_8h_a092fece0f028d6d3bb3c0471a14b8ffd} 
+enum \mbox{\hyperlink{data_8h_a092fece0f028d6d3bb3c0471a14b8ffd}{Firefighter\+Status}} \{ {\bfseries AVAILABLE}
+, {\bfseries BUSY}
+, {\bfseries FIREFIGHTER\+\_\+\+INACTIVE}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the availability status of a firefighter. \end{DoxyCompactList}\item 
+\Hypertarget{data_8h_a18dc643e7983e99c60292cba4633e754}\label{data_8h_a18dc643e7983e99c60292cba4633e754} 
+enum \mbox{\hyperlink{data_8h_a18dc643e7983e99c60292cba4633e754}{Equipment\+Status}} \{ {\bfseries OPERATIONAL}
+, {\bfseries IN\+\_\+\+USE}
+, {\bfseries MAINTENANCE}
+, {\bfseries EQUIPMENT\+\_\+\+INACTIVE}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the operational status of equipment. \end{DoxyCompactList}\item 
+\Hypertarget{data_8h_adb0c23c65d99b2cd164fb2da54a7e3f9}\label{data_8h_adb0c23c65d99b2cd164fb2da54a7e3f9} 
+enum \mbox{\hyperlink{data_8h_adb0c23c65d99b2cd164fb2da54a7e3f9}{Intervention\+Status}} \{ {\bfseries IN\+\_\+\+PLANNING}
+, {\bfseries RUNNING}
+, {\bfseries FINISHED}
+, {\bfseries INTERVENTION\+\_\+\+INACTIVE}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the status of an operational intervention. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the core data structures (structs) and enumerations used across the entire system. This file serves as the central data model for Firefighters, Occurrences, \doxylink{struct_equipment}{Equipment}, and Interventions. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+2
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-enum-members}
+\Hypertarget{data_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{data_8h_aa4ab6e2ce6ba785143575119c67286bb}\index{data.h@{data.h}!OccurrenceStatus@{OccurrenceStatus}}
+\index{OccurrenceStatus@{OccurrenceStatus}!data.h@{data.h}}
+\doxysubsubsection{\texorpdfstring{OccurrenceStatus}{OccurrenceStatus}}
+{\footnotesize\ttfamily \label{data_8h_aa4ab6e2ce6ba785143575119c67286bb} 
+enum \mbox{\hyperlink{data_8h_aa4ab6e2ce6ba785143575119c67286bb}{Occurrence\+Status}}}
+
+
+
+Represents the lifecycle status of an occurrence. 
+
+\begin{DoxyNote}{Note}
+OCCURRENCE\+\_\+\+INACTIVE is used for soft-\/delete (history preservation). 
+\end{DoxyNote}

@@ -1,0 +1,184 @@
+\doxysection{equipments.\+c File Reference}
+\hypertarget{equipments_8c}{}\label{equipments_8c}\index{equipments.c@{equipments.c}}
+
+
+Implementation of the logic for the \doxylink{struct_equipment}{Equipment} management module.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}equipments.\+h"{}}\newline
+{\ttfamily \#include "{}input.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{equipments_8c_a3a7daaeb2d34367e992fd268d66e0f9a}{menu\+Equipments}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Displays the \doxylink{struct_equipment}{Equipment} management menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{equipments_8c_a741662caa4f71f6231a82d539943a941}{create\+Equipment}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head, int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Creates a new equipment item and adds it to the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{equipments_8c_ac90252a2b778193e24133a2bdbf697ab}{list\+Equipments}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Lists all available equipment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{equipments_8c_ac491e8834a6ff5183265dd6f9085f89e}{update\+Equipment}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Updates the status of an equipment item. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{equipments_8c_a869d0d0e34b35571c41051c949046c7f}{delete\+Equipment}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Removes an equipment item (Soft delete). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{equipments_8c_a3112ab06895efeac53a7bf0fdcda0caf}{save\+Equipments}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Saves equipment data to a binary file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{equipments_8c_ae569ff81a75aa254554a62c637cad7e9}{load\+Equipments}} (int \texorpdfstring{$\ast$}{*}id\+Seq)
+\begin{DoxyCompactList}\small\item\em Loads equipment data from a binary file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{equipments_8c_a3bd79ecfceea61afb67c8dc00b933ddc}{free\+Equipments}} (\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}head)
+\begin{DoxyCompactList}\small\item\em Frees memory allocated for equipment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the logic for the \doxylink{struct_equipment}{Equipment} management module. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{equipments_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{equipments_8c_a741662caa4f71f6231a82d539943a941}\index{equipments.c@{equipments.c}!createEquipment@{createEquipment}}
+\index{createEquipment@{createEquipment}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{createEquipment()}{createEquipment()}}
+{\footnotesize\ttfamily \label{equipments_8c_a741662caa4f71f6231a82d539943a941} 
+\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*} create\+Equipment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new equipment item and adds it to the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the current head of the linked list. \\
+\hline
+{\em id\+Seq} & Pointer to the ID sequence counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the new head of the linked list. 
+\end{DoxyReturn}
+\Hypertarget{equipments_8c_a869d0d0e34b35571c41051c949046c7f}\index{equipments.c@{equipments.c}!deleteEquipment@{deleteEquipment}}
+\index{deleteEquipment@{deleteEquipment}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{deleteEquipment()}{deleteEquipment()}}
+{\footnotesize\ttfamily \label{equipments_8c_a869d0d0e34b35571c41051c949046c7f} 
+\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*} delete\+Equipment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Removes an equipment item (Soft delete). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the head of the linked list. 
+\end{DoxyReturn}
+\Hypertarget{equipments_8c_a3bd79ecfceea61afb67c8dc00b933ddc}\index{equipments.c@{equipments.c}!freeEquipments@{freeEquipments}}
+\index{freeEquipments@{freeEquipments}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{freeEquipments()}{freeEquipments()}}
+{\footnotesize\ttfamily \label{equipments_8c_a3bd79ecfceea61afb67c8dc00b933ddc} 
+void free\+Equipments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Frees memory allocated for equipment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{equipments_8c_ac90252a2b778193e24133a2bdbf697ab}\index{equipments.c@{equipments.c}!listEquipments@{listEquipments}}
+\index{listEquipments@{listEquipments}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{listEquipments()}{listEquipments()}}
+{\footnotesize\ttfamily \label{equipments_8c_ac90252a2b778193e24133a2bdbf697ab} 
+void list\+Equipments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Lists all available equipment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{equipments_8c_ae569ff81a75aa254554a62c637cad7e9}\index{equipments.c@{equipments.c}!loadEquipments@{loadEquipments}}
+\index{loadEquipments@{loadEquipments}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{loadEquipments()}{loadEquipments()}}
+{\footnotesize\ttfamily \label{equipments_8c_ae569ff81a75aa254554a62c637cad7e9} 
+\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*} load\+Equipments (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Loads equipment data from a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Seq} & Pointer to store the highest ID found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the pointer to the head of the loaded linked list. 
+\end{DoxyReturn}
+\Hypertarget{equipments_8c_a3a7daaeb2d34367e992fd268d66e0f9a}\index{equipments.c@{equipments.c}!menuEquipments@{menuEquipments}}
+\index{menuEquipments@{menuEquipments}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{menuEquipments()}{menuEquipments()}}
+{\footnotesize\ttfamily \label{equipments_8c_a3a7daaeb2d34367e992fd268d66e0f9a} 
+void menu\+Equipments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Seq}{}\end{DoxyParamCaption})}
+
+
+
+Displays the \doxylink{struct_equipment}{Equipment} management menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Double pointer to the head of the linked list. \\
+\hline
+{\em id\+Seq} & Pointer to the ID sequence counter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{equipments_8c_a3112ab06895efeac53a7bf0fdcda0caf}\index{equipments.c@{equipments.c}!saveEquipments@{saveEquipments}}
+\index{saveEquipments@{saveEquipments}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{saveEquipments()}{saveEquipments()}}
+{\footnotesize\ttfamily \label{equipments_8c_a3112ab06895efeac53a7bf0fdcda0caf} 
+void save\+Equipments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Saves equipment data to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{equipments_8c_ac491e8834a6ff5183265dd6f9085f89e}\index{equipments.c@{equipments.c}!updateEquipment@{updateEquipment}}
+\index{updateEquipment@{updateEquipment}!equipments.c@{equipments.c}}
+\doxysubsubsection{\texorpdfstring{updateEquipment()}{updateEquipment()}}
+{\footnotesize\ttfamily \label{equipments_8c_ac491e8834a6ff5183265dd6f9085f89e} 
+void update\+Equipment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equipment_node}{Equipment\+Node}} \texorpdfstring{$\ast$}{*}}]{head}{}\end{DoxyParamCaption})}
+
+
+
+Updates the status of an equipment item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the linked list. \\
+\hline
+\end{DoxyParams}

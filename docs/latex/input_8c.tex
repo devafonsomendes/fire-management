@@ -1,0 +1,156 @@
+\doxysection{input.\+c File Reference}
+\hypertarget{input_8c}{}\label{input_8c}\index{input.c@{input.c}}
+
+
+Implementation of user input reading and validation functions.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}input.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{input_8c_a35a8a571b374cc7adae7fe767b8f39f0}\label{input_8c_a35a8a571b374cc7adae7fe767b8f39f0} 
+\#define {\bfseries INVALID\+\_\+\+VALUE}~"{}O valor inserido é inválido."{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{input_8c_a11ac4d3ec555747d95fee8ae7aa18b5d}\label{input_8c_a11ac4d3ec555747d95fee8ae7aa18b5d} 
+void {\bfseries clean\+Input\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Clears the input buffer to prevent read errors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{input_8c_aeede875a0209e780ec4aeef8f930b8ae}{get\+Int}} (int min\+Value, int max\+Value, char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Reads an integer within a specific range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{input_8c_a838ac315bc1c46cf5c92656a1ab463d3}{get\+Float}} (float min\+Value, float max\+Value, char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Reads a float within a specific range. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{input_8c_a813c07fbfe16da8be7e0780cbb93d3f1}{get\+Double}} (double min\+Value, double max\+Value, char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Reads a double within a specific range. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{input_8c_a62005cfb0ecfa42871dcd1346baff043}{get\+Char}} (char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Reads a single character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input_8c_ac10d60f207498674660de3ba4f01d70a}{get\+String}} (char \texorpdfstring{$\ast$}{*}string, unsigned int length, char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Reads a string with a maximum length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of user input reading and validation functions. 
+
+\begin{DoxyAuthor}{Author}
+Afonso Mendes 
+
+Rodrigo Ferreira 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) ESTG 2025. All Rights MIT Licensed. 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{input_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{input_8c_a62005cfb0ecfa42871dcd1346baff043}\index{input.c@{input.c}!getChar@{getChar}}
+\index{getChar@{getChar}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{getChar()}{getChar()}}
+{\footnotesize\ttfamily \label{input_8c_a62005cfb0ecfa42871dcd1346baff043} 
+char get\+Char (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Reads a single character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to display to the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character entered by the user. 
+\end{DoxyReturn}
+\Hypertarget{input_8c_a813c07fbfe16da8be7e0780cbb93d3f1}\index{input.c@{input.c}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily \label{input_8c_a813c07fbfe16da8be7e0780cbb93d3f1} 
+double get\+Double (\begin{DoxyParamCaption}\item[{double}]{min\+Value}{, }\item[{double}]{max\+Value}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Reads a double within a specific range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Value} & Minimum acceptable value. \\
+\hline
+{\em max\+Value} & Maximum acceptable value. \\
+\hline
+{\em message} & Message to display to the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The validated double entered by the user. 
+\end{DoxyReturn}
+\Hypertarget{input_8c_a838ac315bc1c46cf5c92656a1ab463d3}\index{input.c@{input.c}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily \label{input_8c_a838ac315bc1c46cf5c92656a1ab463d3} 
+float get\+Float (\begin{DoxyParamCaption}\item[{float}]{min\+Value}{, }\item[{float}]{max\+Value}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Reads a float within a specific range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Value} & Minimum acceptable value. \\
+\hline
+{\em max\+Value} & Maximum acceptable value. \\
+\hline
+{\em message} & Message to display to the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The validated float entered by the user. 
+\end{DoxyReturn}
+\Hypertarget{input_8c_aeede875a0209e780ec4aeef8f930b8ae}\index{input.c@{input.c}!getInt@{getInt}}
+\index{getInt@{getInt}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{getInt()}{getInt()}}
+{\footnotesize\ttfamily \label{input_8c_aeede875a0209e780ec4aeef8f930b8ae} 
+int get\+Int (\begin{DoxyParamCaption}\item[{int}]{min\+Value}{, }\item[{int}]{max\+Value}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Reads an integer within a specific range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Value} & Minimum acceptable value. \\
+\hline
+{\em max\+Value} & Maximum acceptable value. \\
+\hline
+{\em message} & Message to display to the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The validated integer entered by the user. 
+\end{DoxyReturn}
+\Hypertarget{input_8c_ac10d60f207498674660de3ba4f01d70a}\index{input.c@{input.c}!getString@{getString}}
+\index{getString@{getString}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily \label{input_8c_ac10d60f207498674660de3ba4f01d70a} 
+void get\+String (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{string}{, }\item[{unsigned int}]{length}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Reads a string with a maximum length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Buffer where the string will be stored. \\
+\hline
+{\em length} & Maximum length of the string to read. \\
+\hline
+{\em message} & Message to display to the user. \\
+\hline
+\end{DoxyParams}
